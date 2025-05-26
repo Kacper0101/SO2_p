@@ -21,16 +21,16 @@ Program składa się z dwóch części:
 ## Kompilacja i uruchomienie
 
 ### Serwer
-```bash
+
 g++ server.cpp -o server.exe -lws2_32
 .\server.exe
 ### Klient
-```bash
+
 g++ user.cpp -o user.exe -lws2_32
 .\user.exe
 
 
-# Struktura programu
+## Struktura programu
 Serwer
 - **Inicjalizacja Winsock
 - **Utworzenie gniazda serwera TCP i przypisanie do portu
