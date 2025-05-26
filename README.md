@@ -28,7 +28,7 @@ g++ server.cpp -o server.exe -lws2_32
 ```bash
 g++ user.cpp -o user.exe -lws2_32
 .\user.exe
-```bash
+
 
 # Struktura programu
 Serwer
