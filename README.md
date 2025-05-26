@@ -1,10 +1,10 @@
 # Wielowątkowy serwer czatu
 
-**Autorzy:**  
+**Autorzy:**  👨💻
 - Dominik Filipiak (273479)  
 - Kacper Kostrzewa (272855)
 
-## Opis projektu
+## Opis projektu🚀🚀🚀
 
 Projekt realizuje prosty, wielowątkowy system czatu działający w architekturze klient-serwer.
 
@@ -12,7 +12,7 @@ Program składa się z dwóch części:
 - **Serwer czatu** — nasłuchuje na połączenia od klientów, obsługuje wielu użytkowników jednocześnie, rozsyła otrzymane wiadomości do wszystkich uczestników.
 - **Użytkownik czatu** — łączy się z serwerem, umożliwia wpisywanie wiadomości i odbieranie wiadomości od innych użytkowników.
 
-## Wymagania systemowe
+## Wymagania systemowe🔧💻
 
 - **System operacyjny:** Windows
 - **Kompilator:** C++ obsługujący standard C++11 lub nowszy
@@ -24,7 +24,7 @@ Program składa się z dwóch części:
 
 g++ server.cpp -o server.exe -lws2_32
 .\server.exe
-### Klient
+### Klient📱🤖🔗
 
 g++ user.cpp -o user.exe -lws2_32
 .\user.exe
@@ -40,7 +40,7 @@ Serwer
 - **Obsługa użytkownika: wprowadzanie nick-u, dodanie użytkownika do listy, odbiór i rozsyłanie wiadomości
 - **Usuwanie klientów po rozłączeniu
 
-### Klient
+### Klient 📱🤖🔗
 - **Inicjalizacja Winsock
 - **Utworzenie gniazda TCP
 - **Połączenie z serwerem pod adresem IP i portem
@@ -48,14 +48,14 @@ Serwer
 - **Uruchomienie wątku odbierającego wiadomości
 - **Pętla główna do wysyłania wiadomości
 - **Zamykanie połączenia
-# Serwer
+# Serwer🖥️🔌
 Po uruchomieniu serwer tworzy gniazdo i przypisuje je do portu 8080 po czym rozpoczyna się nieskończona pętla w której czeka na nowe połączenia.
 Po zaakceptowaniu klienta, tworzy nowy wątek do obsługi tego klienta.
 Wątek klienta odbiera nazwę użytkownika a następnie dodaje klienta do globalnej listy.
 Każda wiadomość od klienta jest odbierana i rozsyłana do pozostałych klientów.
 Po rozłączeniu klienta, jest on usuwany z listy, a pozostali są o tym informowani.
 
-# Użytkownik 
+# Użytkownik 👥💬
 Użytkownik inicjalizuje Winsock i tworzy gniazdo TCP.
 Łączy się z serwerem pod adresem 127.0.0.1 i portem 8080.
 Po połączeniu wysyła nazwę użytkownika następnie uruchamia wątek, który odbiera i wyświetla wiadomości od serwera.
