@@ -5,15 +5,15 @@ Dominik Filipiak (273479)
 
 Kacper Kostrzewa (272855)
 
-📝 Opis projektu
+📝# Opis projektu
 Projekt realizuje prosty, wielowątkowy system czatu działający w architekturze klient-serwer.
 
-🔧 Części składowe:
+🔧#Części składowe:
 Serwer czatu – nasłuchuje połączeń od klientów, obsługuje wielu użytkowników jednocześnie i rozsyła wiadomości do wszystkich uczestników.
 
 Klient czatu – łączy się z serwerem, umożliwia wysyłanie i odbieranie wiadomości od innych użytkowników.
 
-🛠 Wymagania
+#🛠 Wymagania
 System operacyjny: Windows
 
 Kompilator: C++ (obsługujący standard C++11 lub nowszy)
