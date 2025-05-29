@@ -1,26 +1,26 @@
-Wielowątkowy Serwer Czatu
+### Wielowątkowy Serwer Czatu
 Autorzy:
 
 Dominik Filipiak (273479)
 
 Kacper Kostrzewa (272855)
 
-📝# Opis projektu
+# 📝 Opis projektu
 Projekt realizuje prosty, wielowątkowy system czatu działający w architekturze klient-serwer.
 
-🔧#Części składowe:
+# 🔧Części składowe:
 Serwer czatu – nasłuchuje połączeń od klientów, obsługuje wielu użytkowników jednocześnie i rozsyła wiadomości do wszystkich uczestników.
 
 Klient czatu – łączy się z serwerem, umożliwia wysyłanie i odbieranie wiadomości od innych użytkowników.
 
-#🛠 Wymagania
+# 🛠 Wymagania
 System operacyjny: Windows
 
 Kompilator: C++ (obsługujący standard C++11 lub nowszy)
 
 Biblioteka: ws2_32.lib
 
-🚀 Kompilacja i uruchomienie
+# 🚀 Kompilacja i uruchomienie
 Serwer
 ```sh
 sh
@@ -33,15 +33,15 @@ sh
 g++ user.cpp -o user.exe -lws2_32
 .\user.exe
 ```
-🏗 Struktura programu
-Serwer
+# 🏗 Struktura programu
+### Serwer
 Inicjalizacja WinSock – przygotowanie do komunikacji sieciowej.
 
 Utworzenie gniazda TCP – nasłuchiwanie na porcie 8080.
 
 Akceptowanie klientów – dla każdego nowego połączenia tworzony jest osobny wątek.
 
-Obsługa użytkownika:
+### Obsługa użytkownika:
 
 Wprowadzenie nicku.
 
@@ -59,7 +59,7 @@ std::lock_guard gwarantuje automatyczne odblokowanie mutexa po zakończeniu dane
 
 Usuwanie klientów – po rozłączeniu klienta jest on usuwany z listy, a pozostali użytkownicy otrzymują stosowną informację.
 
-Klient
+### Klient
 Inicjalizacja WinSock – przygotowanie do połączenia.
 
 Utworzenie gniazda TCP – połączenie z serwerem (127.0.0.1:8080).
@@ -72,8 +72,8 @@ Wysyłanie wiadomości – w głównym wątku.
 
 Zamykanie połączenia – po wpisaniu komendy /exit.
 
-🔄 Działanie
-Serwer
+# 🔄 Działanie
+### Serwer
 Po uruchomieniu tworzy gniazdo i nasłuchuje na porcie 8080.
 
 Dla każdego nowego klienta tworzy osobny wątek.
@@ -82,7 +82,7 @@ Odbiera wiadomości i rozsyła je do wszystkich uczestników czatu.
 
 Po rozłączeniu klienta usuwa go z listy i powiadamia innych.
 
-Klient
+### Klient
 Łączy się z serwerem i podaje swój nick.
 
 W osobnym wątku odbiera wiadomości od innych użytkowników.
