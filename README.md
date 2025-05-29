@@ -1,9 +1,9 @@
-### Wielowątkowy Serwer Czatu
-Autorzy:
+# Wielowątkowy Serwer Czatu
+### Autorzy:
 
-Dominik Filipiak (273479)
+### Dominik Filipiak (273479)
 
-Kacper Kostrzewa (272855)
+### Kacper Kostrzewa (272855)
 
 # 📝 Opis projektu
 Projekt realizuje prosty, wielowątkowy system czatu działający w architekturze klient-serwer.
