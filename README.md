@@ -22,16 +22,20 @@ Biblioteka: ws2_32.lib
 
 🚀 Kompilacja i uruchomienie
 Serwer
+```sh
 sh
 g++ server.cpp -o server.exe -lws2_32
 .\server.exe
+```
 Klient
+```sh
 sh
 g++ user.cpp -o user.exe -lws2_32
 .\user.exe
+```
 🏗 Struktura programu
 Serwer
-Inicjalizacja Winsock – przygotowanie do komunikacji sieciowej.
+Inicjalizacja WinSock – przygotowanie do komunikacji sieciowej.
 
 Utworzenie gniazda TCP – nasłuchiwanie na porcie 8080.
 
@@ -45,22 +49,28 @@ Dodanie użytkownika do globalnej listy.
 
 Odbieranie i rozsyłanie wiadomości do wszystkich klientów.
 
-Synchronizacja wątków – wykorzystanie spinlocka do bezpiecznego dostępu do współdzielonych zasobów.
+Synchronizacja wątków – użycie mutexa
 
-Usuwanie klientów – po rozłączeniu klient jest usuwany z listy, a pozostali użytkownicy otrzymują informację.
+W celu zapewnienia bezpieczeństwa przy dostępie do wspólnej listy klientów (std::vector<Client>), zastosowano std::mutex oraz std::lock_guard.
+
+Mutex chroni operacje dodawania, usuwania oraz iteracji po liście klientów, zapobiegając konfliktom i błędom wynikającym z jednoczesnego dostępu wielu wątków.
+
+std::lock_guard gwarantuje automatyczne odblokowanie mutexa po zakończeniu danego bloku kodu.
+
+Usuwanie klientów – po rozłączeniu klienta jest on usuwany z listy, a pozostali użytkownicy otrzymują stosowną informację.
 
 Klient
-Inicjalizacja Winsock – przygotowanie do połączenia.
+Inicjalizacja WinSock – przygotowanie do połączenia.
 
 Utworzenie gniazda TCP – połączenie z serwerem (127.0.0.1:8080).
 
 Wysłanie nazwy użytkownika – identyfikacja w czacie.
 
-Odbieranie wiadomości – w osobnym wątku.
+Odbieranie wiadomości – w osobnym wątku (std::thread).
 
 Wysyłanie wiadomości – w głównym wątku.
 
-Zamykanie połączenia – po wpisaniu komendy exit.
+Zamykanie połączenia – po wpisaniu komendy /exit.
 
 🔄 Działanie
 Serwer
@@ -79,4 +89,4 @@ W osobnym wątku odbiera wiadomości od innych użytkowników.
 
 W głównym wątku umożliwia wpisywanie i wysyłanie wiadomości.
 
-Po wpisaniu exit zamyka połączenie.
+Po wpisaniu /exit zamyka połączenie.
